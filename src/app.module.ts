@@ -28,8 +28,9 @@ import { Enrollment } from './courses/entities/enrollment.entity';
           database: process.env.DB_DATABASE,
           synchronize: process.env.DB_SYNC === 'true',
           ssl: {
-            rejectUnauthorized: false, // Disable strict SSL validation (useful for development)
+            rejectUnauthorized: false,
           },
+          entities: [User, Course, Enrollment],
         };
       },
     }),
